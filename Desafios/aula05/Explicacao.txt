@@ -1,0 +1,24 @@
+Desafio 5 - Árvore Binária de Busca (BST): Insert e Search
+============================================================
+
+Uma BST organiza os nós por regra: valores menores ficam à esquerda,
+maiores ficam à direita. Isso permite encontrar qualquer valor sem
+precisar percorrer a árvore inteira.
+
+Insert:
+A inserção é feita de forma recursiva. A função desce pela árvore
+comparando o valor com o nó atual: se for menor, vai para a esquerda;
+se for maior, vai para a direita. Quando chega em um nó NULL, é o lugar
+certo — cria o nó ali. O resultado de cada chamada é reatribuído ao
+filho correspondente, o que garante que os ponteiros da árvore fiquem
+corretamente ligados após a inserção.
+
+Search:
+Segue a mesma lógica de descida. Compara o valor buscado com o nó atual:
+se for igual, retornou; se for menor, busca na subárvore esquerda; se
+for maior, busca na direita. Se chegar em NULL, o valor não existe na
+árvore.
+
+O uso de recursão em ambas as funções reflete diretamente a estrutura
+da árvore — cada chamada resolve um subproblema menor, até chegar no
+caso base.

@@ -1,0 +1,22 @@
+O desafio era processar textos e responder três operações: contar palavras,
+buscar uma palavra e comparar dois textos.
+ 
+A estrutura central é um Dictionary<string, int> — cada palavra é a chave
+e sua contagem é o valor. Dicionários permitem busca e inserção em tempo
+constante, o que é ideal para contagem de frequência.
+ 
+LerNovoTexto:
+Lê o texto linha por linha até uma linha vazia. Cada linha é normalizada
+(minúsculas, sem pontuação) e dividida em palavras. Para cada palavra,
+incrementa o contador no dicionário ou inicia em 1 se for a primeira
+ocorrência. Ao final, ordena por frequência e exibe o top 10.
+ 
+ProcurarPalavra:
+Normaliza o termo buscado da mesma forma que o texto foi processado e
+faz uma consulta direta no dicionário com ContainsKey.
+ 
+MostrarComparacao:
+Usa HashSet para encontrar as palavras em comum entre os dois textos mais
+recentes. Coloca as chaves do penúltimo texto num HashSet e aplica
+IntersectWith com as chaves do último — o resultado é só o que aparece
+nos dois.

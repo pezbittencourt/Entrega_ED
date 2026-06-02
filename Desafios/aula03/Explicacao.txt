@@ -1,0 +1,26 @@
+Desafio 3 - Batalha por Turnos com Lista Circular
+=====================================================
+
+O desafio era simular uma batalha por turnos entre Rebeldes e Império,
+onde cada personagem age na sua vez, em ciclo, até acabarem os turnos.
+
+A estrutura escolhida foi uma lista circular: o último nó aponta de volta
+para o primeiro, formando um anel. Isso é perfeito para turnos — ao chegar
+no fim da lista, o ciclo recomeça naturalmente.
+
+Os personagens são inseridos em ordem crescente de iniciativa
+(insereOrdenadoPorIniciativa), então quem age primeiro é quem tem menor
+iniciativa, garantindo uma ordem de combate justa.
+
+A cada turno, executaUmTurno faz três coisas:
+  1. Busca o inimigo mais próximo na lista (tipo oposto ao do atual)
+  2. Aplica o dano — com 20% de chance de disparar a habilidade especial,
+     multiplicando o dano pelo modificador do personagem
+  3. Se o inimigo morrer (vida <= 0), remove-o da lista circular
+
+A remoção da lista circular exige cuidado: além de redirecionar o ponteiro
+do nó anterior, é preciso garantir que o fim da lista sempre aponte de
+volta para o início, mantendo o anel íntegro.
+
+O cursor "atual" avança para atual->prox antes de qualquer remoção, para
+não ficar apontando para um nó que foi liberado da memória.

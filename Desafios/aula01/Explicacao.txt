@@ -1,0 +1,48 @@
+Desafio 1.1 - Print List
+ 
+A função precisa percorrer todos os nós da lista e imprimir seus valores.
+ 
+Para isso, cria-se um cursor auxiliar (curr) que começa no início da lista
+e avança nó a nó pelo campo "prox", imprimindo o valor de cada um.
+ 
+O loop para quando curr chega em NULL, que é o sinal de fim da lista.
+
+
+
+Desafio 1.2 - removeUltimo
+============================
+
+Remover o último nó exige encontrar o penúltimo, já que a lista é encadeada
+apenas para frente — não há como voltar a partir do fim.
+
+Primeiro trata o caso especial: se há só um elemento, libera e zera tudo.
+Caso contrário, percorre a lista com um cursor até que curr->prox seja o
+último nó (l->fim). Nesse ponto, curr é o penúltimo. Libera o último,
+aponta curr->prox para NULL e atualiza l->fim para curr.
+
+
+Desafio 1.3 - removePorNumero
+==============================
+
+Para remover um nó pelo valor, o truque é: em vez de olhar para o nó atual,
+olhar sempre para o próximo (curr->prox). Assim, quando o valor é encontrado,
+o cursor já está no nó anterior e pode redirecionar o ponteiro, "pulando"
+o nó removido.
+
+Primeiro trata o caso especial em que o valor está no primeiro nó, pois
+não há nó anterior para redirecionar — basta mover l->inicio para o segundo.
+Depois percorre normalmente verificando curr->prox->info. Ao encontrar,
+faz curr->prox apontar para o nó depois do removido e libera a memória.
+Se o removido era o último, atualiza l->fim.
+
+
+Desafio 1.4 - inverteLista
+============================
+
+A solução cria uma nova lista vazia e percorre a lista original do início
+ao fim. A cada nó visitado, insere seu valor no INÍCIO da nova lista.
+
+Inserir sempre no início faz com que o primeiro elemento original vire o
+último da nova lista, e o último original vire o primeiro — produzindo
+naturalmente a ordem inversa, sem precisar reorganizar ponteiros da lista
+original.

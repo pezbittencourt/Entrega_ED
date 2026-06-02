@@ -1,0 +1,15 @@
+A ideia do desafio foi montar uma batalha simples de Pokémon usando os conceitos de Programação Orientada a Objetos, principalmente classe, objeto, herança, método, sobrescrita e lista.
+
+Primeiro eu pensei que todo Pokémon tem algumas características iguais, como Nome, Tipo, Vida, Ataque e Defesa. Por isso criei uma classe principal chamada Pokemon. Essa classe funciona como uma base, porque qualquer Pokémon do jogo precisa ter esses atributos. Também coloquei nela métodos como ExibirStatus() e Atacar(), já que todos os Pokémon conseguem mostrar seus dados e atacar outro Pokémon.
+
+Depois usei herança para criar tipos específicos de Pokémon: PokemonFogo, PokemonAgua e PokemonGrama. Essas classes herdam da classe Pokemon, então elas já recebem os atributos e métodos principais. A diferença é que cada tipo tem um jeito próprio de atacar. Para isso, usei o override, sobrescrevendo o método Atacar() da classe base.
+
+No caso do Pokémon de fogo, eu pensei em deixar ele mais ofensivo, então o ataque causa um dano extra. No Pokémon de água, depois de atacar ele recupera um pouco de vida, como se tivesse uma habilidade defensiva. Já o Pokémon de grama tem uma chance de causar mais dano, usando Random, então ele fica com uma mecânica mais baseada em sorte.
+
+Também criei a classe Treinador, porque no jogo não faria sentido os Pokémon ficarem soltos. Cada treinador tem um Nome e uma lista de Pokémon. Para guardar esses Pokémon, usei uma LinkedList<Pokemon>, que é uma estrutura de dados em forma de lista encadeada. Assim, o treinador consegue adicionar Pokémon, listar os Pokémon que ele tem e escolher um pelo nome.
+
+No Program.cs, eu criei os objetos, ou seja, instanciei os Pokémon e os treinadores. Depois coloquei os Pokémon dentro das listas de cada treinador. A partir disso, o programa mostra os treinadores disponíveis, pede para o jogador escolher um treinador, depois pede para escolher um Pokémon e finalmente começa a batalha.
+
+A batalha funciona com um while, repetindo enquanto os dois Pokémon ainda têm vida maior que zero. Um Pokémon ataca o outro, o programa calcula o dano com base no ataque e na defesa, diminui a vida do alvo e depois troca a vez. Quando a vida de um deles chega a zero ou menos, o loop termina e o programa mostra o vencedor.
+
+Resumindo, meu pensamento foi: primeiro criar uma classe geral para representar qualquer Pokémon, depois usar herança para criar tipos diferentes com comportamentos próprios, depois organizar esses Pokémon dentro de treinadores usando lista, e por fim montar a lógica da batalha usando os métodos de cada objeto. Assim o desafio junta POO com estrutura de dados de um jeito simples e prático.

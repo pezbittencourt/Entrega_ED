@@ -1,0 +1,16 @@
+Desafio 6.1 - BST: Buscar Máximo e Mínimo
+==========================================
+
+A propriedade da BST resolve isso de forma direta: valores maiores sempre
+ficam à direita e valores menores sempre ficam à esquerda.
+
+MaiorValor:
+Desce sempre pela direita até encontrar um nó que não tem filho direito.
+Esse nó é o maior da árvore.
+
+MenorValor:
+Mesma lógica, mas descendo sempre pela esquerda até não haver filho
+esquerdo. Esse nó é o menor da árvore.
+
+Ambas usam recursão, mas poderiam ser feitas com um simples loop while —
+o raciocínio é o mesmo: seguir em uma direção até não poder mais.

@@ -1,0 +1,38 @@
+Desafio 2.1 - SomaLista
+=========================
+
+Percorre a lista com um cursor do início ao fim, acumulando os valores
+de cada nó em uma variável "soma". O loop avança nó a nó até chegar em
+NULL, e ao final imprime o total.
+
+
+Desafio 2.2 - llBubbleSort
+============================
+
+O BubbleSort funciona comparando pares de elementos adjacentes e trocando-os
+se estiverem fora de ordem, repetindo isso até a lista estar ordenada.
+
+Em vez de trocar os nós de lugar (o que exigiria rearranjar ponteiros), a
+solução troca apenas os valores (curr->info) entre os nós, usando uma
+variável auxiliar. Isso simplifica bastante a implementação.
+
+O loop externo controla quantas passagens são feitas. O loop interno
+percorre os pares adjacentes, mas a cada passagem vai até um elemento a
+menos, pois o maior valor já "borbulhou" para o final e não precisa ser
+comparado novamente.
+
+
+Desafio 2.3 - insereOrdenado
+==============================
+
+Para inserir mantendo a ordem crescente, é preciso encontrar o ponto
+certo antes de inserir — diferente do inserirNoFim ou inserirNoInicio.
+
+Primeiro trata o caso especial: se a lista está vazia ou o novo valor é
+menor que o primeiro, insere no início.
+
+Caso contrário, percorre a lista enquanto o próximo nó existir e seu
+valor for menor que o valor a inserir. Quando o loop para, curr está
+exatamente no nó que deve ficar antes do novo. O novo nó é encaixado
+entre curr e curr->prox, ajustando os ponteiros na ordem certa para não
+perder o restante da lista.
